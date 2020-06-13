@@ -13,3 +13,22 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars
+
+# Build
+resume-api
+resume-api.zip
+terraform.tfstate
+terraform.tfstate.backup
+
+# misc
+.DS_Store

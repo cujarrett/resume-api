@@ -5,6 +5,9 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+
+	"github.com/aws/aws-lambda-go/events"
+	"github.com/aws/aws-lambda-go/lambda"
 )
 
 type Resume struct {
@@ -311,34 +314,42 @@ func getResume() *Resume {
 				Name:      "Caleb Lemoine",
 				Reference: "Matt is one of the best engineers I've had the pleasure of working with and knowing personally. He would be a highly valued asset anywhere.",
 			},
+			{
+				Name:      "Lucas Reardon",
+				Reference: "Matt Jarrett's passion for technology is infectious. His brand as a forward-thinking leader and influencer raises the performance of those around him as well as the products and capabilities he touches. If you're building a team, you want Matt. Full stop.",
+			},
 		},
 	}
 }
 
-func handleRouting(response http.ResponseWriter, request *http.Request) {
-	response.Header().Set("Content-Type", "application/json")
-	if request.Method == "GET" {
-		response.WriteHeader(http.StatusOK)
-		responseStruct := getResume()
-		bytesBuffer := new(bytes.Buffer)
-		json.NewEncoder(bytesBuffer).Encode(responseStruct)
+func formatResume(input *Resume) string {
+	bytesBuffer := new(bytes.Buffer)
+	json.NewEncoder(bytesBuffer).Encode(&input)
 
-		responseBytes := bytesBuffer.Bytes()
+	responseBytes := bytesBuffer.Bytes()
 
-		var prettyJSON bytes.Buffer
-		error := json.Indent(&prettyJSON, responseBytes, "", "  ")
-		if error != nil {
-			log.Println("JSON parse error: ", error)
-			return
-		}
-		response.Write([]byte(prettyJSON.Bytes()))
-	} else {
-		response.WriteHeader(http.StatusNotFound)
-		response.Write([]byte(`{"message": "not found"}`))
+	var prettyJSON bytes.Buffer
+	error := json.Indent(&prettyJSON, responseBytes, "", "  ")
+	if error != nil {
+		log.Println("JSON parse error: ", error)
 	}
+	formattedJson := string(prettyJSON.Bytes())
+	return formattedJson
+}
+
+// The input type and the output type are defined by the API Gateway.
+func handleRequest(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+	resume := getResume()
+	formattedJson := formatResume(resume)
+
+	response := events.APIGatewayProxyResponse{
+		StatusCode: http.StatusOK,
+		Headers:    map[string]string{"Content-Type": "text/plain; charset=utf-8"},
+		Body:       formattedJson,
+	}
+	return response, nil
 }
 
 func main() {
-	http.HandleFunc("/", handleRouting)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	lambda.Start(handleRequest)
 }
