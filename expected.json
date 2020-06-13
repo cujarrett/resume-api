@@ -1,0 +1,278 @@
+{
+  "basics": {
+    "name": "Matt Jarrett",
+    "label": "Full Stack Developer",
+    "picture": "https://mattjarrett.dev/img/header.jpg",
+    "email": "cujarrett@gmail.com",
+    "phone": "217-390-2877",
+    "website": "https://mattjarrett.dev/",
+    "summary": "Dad. Husband. Full Stack Developer. JavaScript Enthusiast. Aspiring Designer. Cyclist. I'm a passionate and detail oriented full stack software developer based in Dallas, Texas. Experienced leader where I enjoy design, clean code, and building positive team environments and strong developer experiences. I enjoy turning problems into solutions that make people smile. I enjoy continuous learning and exploring new technologies. When I'm not coding at home or work, I enjoy time with my family and photography.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Dallas",
+      "countryCode": "US",
+      "region": "Texas"
+    },
+    "profiles": [
+      {
+        "network": "Linkedin",
+        "username": "Matt Jarrett",
+        "url": "https://www.linkedin.com/in/matt-jarrett-303a75144/"
+      },
+      {
+        "network": "GitHub",
+        "username": "cujarrett",
+        "url": "https://github.com/cujarrett"
+      },
+      {
+        "network": "Twitter",
+        "username": "cujarrett",
+        "url": "https://twitter.com/home"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "State Farm",
+      "position": "Technology Engineer",
+      "website": "https://www.statefarm.com",
+      "startDate": "2011-11-01",
+      "endDate": "N/A",
+      "summary": "State Farm is the largest property and casualty insurance provider in the United States. It is also the largest auto insurance provider in the United States. State Farm is ranked 36th in the 2019 Fortune 500, which lists American companies by revenue.",
+      "highlights": [
+        "Advancing Cloud Native and DevOps transformations in the telematics platform space. Working with an exciting mix of technology including public cloud, mobile, and legacy systems. Working daily on not only technology but also culture.",
+        "Built new solutions using React, Node, NOSQL, REST, Kubernetes, GitLab, CI/CD, Grafana, and Prometheus for enablement of large high priority enterprise initiatives. Mentored several team members in modern technology. Designed solutions for implementation. Taught classes on modern JavaScript.",
+        "Designed and implemented many successful web services allowing developers on demand access to safe fabricated data for a variety of needs and automation. It's since been used millions of times across the enterprise, enabling development teams to focus on improving customer experience.",
+        "Designed and implemented an automated infrastructure solution offering a complete stand up and tear down process accomplished in minutes compared to days.",
+        "Taught Java in Enterprise Java classes to spread knowledge. Active member of the college recruitment team including creation of campus events, hacks, and interviews. Mentored many college interns through a successful internships resulting in all receiving and accepting full time positions. Designed and implemented multiple solutions in Java."
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Tech Titans",
+      "position": "Speaker",
+      "website": "https://techtitans.org/",
+      "startDate": "2017-01-01",
+      "endDate": "N/A",
+      "summary": "Tech Titans is a forum that leverages the regional technology community to collaborate, share and inspire creative thinking that fuels tomorrow’s innovations.",
+      "highlights": [
+        "I Spoke at many events over the years with audiences including teachers and students."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Illinois State University",
+      "area": "Information Technology",
+      "studyType": "Bachelor",
+      "startDate": "2009-06-01",
+      "endDate": "2011-01-01",
+      "gpa": "3.87/4.0",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "AWS",
+      "level": "Intermediate",
+      "keywords": [
+        "Cloud",
+        "Lambda",
+        "S3",
+        "CloudFront"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Expert",
+      "keywords": [
+        "ECMAScript",
+        "ES6",
+        "Node.js",
+        "Web",
+        "Front End"
+      ]
+    },
+    {
+      "name": "React",
+      "level": "Pro",
+      "keywords": [
+        "SPA",
+        "Web",
+        "Front End"
+      ]
+    },
+    {
+      "name": "Vue",
+      "level": "Intermediate",
+      "keywords": [
+        "SPA",
+        "Web",
+        "Front End"
+      ]
+    },
+    {
+      "name": "Angular",
+      "level": "Intermediate",
+      "keywords": [
+        "SPA",
+        "Web",
+        "Front End"
+      ]
+    },
+    {
+      "name": "Go",
+      "level": "Intermediate",
+      "keywords": [
+        "Golang"
+      ]
+    },
+    {
+      "name": "Kubernetes",
+      "level": "Pro",
+      "keywords": [
+        "K8s",
+        "CKAD"
+      ]
+    },
+    {
+      "name": "Docker",
+      "level": "Intermediate",
+      "keywords": [
+        "Containers"
+      ]
+    },
+    {
+      "name": "Design",
+      "level": "Intermediate",
+      "keywords": [
+        "Web",
+        "Front End"
+      ]
+    },
+    {
+      "name": "Linux",
+      "level": "Intermediate",
+      "keywords": [
+        "Bash",
+        "Shell"
+      ]
+    },
+    {
+      "name": "NOSQL",
+      "level": "Pro",
+      "keywords": [
+        "Couch",
+        "Dynamo"
+      ]
+    },
+    {
+      "name": "SQL",
+      "level": "Pro",
+      "keywords": [
+        "PostgreSQL",
+        "Aurora"
+      ]
+    },
+    {
+      "name": "GitHub",
+      "level": "Expert",
+      "keywords": [
+        "SDLC",
+        "OSS",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "GitLab",
+      "level": "Expert",
+      "keywords": [
+        "SDLC",
+        "OSS",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Pipelines",
+      "level": "Expert",
+      "keywords": [
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Grafana",
+      "level": "Expert",
+      "keywords": [
+        "DevOps",
+        "Observability",
+        "Dashboards",
+        "SRE",
+        "SLO"
+      ]
+    },
+    {
+      "name": "Prometheus",
+      "level": "Expert",
+      "keywords": [
+        "DevOps",
+        "Observability",
+        "Dashboards",
+        "SRE",
+        "SLO"
+      ]
+    },
+    {
+      "name": "Java",
+      "level": "Pro",
+      "keywords": []
+    },
+    {
+      "name": "Photoshop",
+      "level": "Expert",
+      "keywords": []
+    },
+    {
+      "name": "Python",
+      "level": "Intermediate",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Cycling",
+      "keywords": [
+        "MTB",
+        "Gravel",
+        "Road"
+      ]
+    },
+    {
+      "name": "Photography",
+      "keywords": [
+        "Weddings",
+        "Landscape",
+        "Senior"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Caleb Lemoine",
+      "reference": "Matt is one of the best engineers I've had the pleasure of working with and knowing personally. He would be a highly valued asset anywhere."
+    },
+    {
+      "name": "Lucas Reardon",
+      "reference": "Matt Jarrett's passion for technology is infectious. His brand as a forward-thinking leader and influencer raises the performance of those around him as well as the products and capabilities he touches. If you're building a team, you want Matt. Full stop."
+    }
+  ]
+}
