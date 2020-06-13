@@ -13,9 +13,7 @@ provider "aws" {
 # The handler is the name of the executable for go1.x runtime.
 resource "aws_lambda_function" "resume-api" {
   function_name    = "resume-api"
-  filename         = "resume-api.zip"
   handler          = "resume-api"
-  source_code_hash = filebase64sha256("resume-api.zip")
   role             = aws_iam_role.resume-api.arn
   runtime          = "go1.x"
   memory_size      = 128
