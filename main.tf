@@ -12,12 +12,12 @@ provider "aws" {
 #
 # The handler is the name of the executable for go1.x runtime.
 resource "aws_lambda_function" "resume-api" {
-  function_name    = "resume-api"
-  handler          = "resume-api"
-  role             = aws_iam_role.resume-api.arn
-  runtime          = "go1.x"
-  memory_size      = 128
-  timeout          = 1
+  function_name = "resume-api"
+  handler       = "resume-api"
+  role          = aws_iam_role.resume-api.arn
+  runtime       = "go1.x"
+  memory_size   = 128
+  timeout       = 1
 }
 
 # A Lambda function may access to other AWS resources such as S3 bucket. So an
