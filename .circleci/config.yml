@@ -48,7 +48,7 @@ workflows:
   version: 2
   cicd:
     jobs:
-      - test:
+      - test
       - build:
           requires:
             - test
