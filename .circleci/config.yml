@@ -1,26 +1,60 @@
 # Golang CircleCI 2.0 configuration file
-#
 # Check https://circleci.com/docs/2.0/language-go/ for more details
 version: 2
 jobs:
-  build:
+
+  test:
     docker:
-      # specify the version
       - image: circleci/golang:1.9
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
-    #### TEMPLATE_NOTE: go expects specific checkout path representing url
-    #### expecting it in the form of
-    ####   /go/src/github.com/circleci/go-tool
-    ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: /go/src/github.com/cujarrett/resume-api
     steps:
       - checkout
-
-      # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
       - run: go test -v ./...
+
+  build:
+    docker:
+      - image: circleci/golang:1.9
+    working_directory: /go/src/github.com/cujarrett/resume-api
+    steps:
+      - checkout
+      - run: go get -v -t -d ./...
+      - run: GOOS=linux go build -o resume-api main.go
+      - run: zip resume-api.zip -q resume-api
+      - persist_to_workspace:
+        root: .
+        paths:
+          - .
+
+  deploy:
+    docker:
+      - image: 'circleci/python:3.7.6'
+    working_directory: /go/src/github.com/cujarrett/resume-api
+    steps:
+      - attach_workspace:
+          at: /go/src/github.com/cujarrett/resume-api
+      - run:
+          name: Install AWS CLI
+          command: sudo pip install awscli
+      - deploy:
+          name: Deploy to AWS S3
+          command: |
+            aws lambda update-function-code \
+              --function-name=resume-api \
+              --zip-file=fileb://resume-api.zip 1> /dev/null \
+              --region=us-east-1
+
+workflows:
+  version: 2
+  cicd:
+    jobs:
+      - test:
+      - build:
+          requires:
+            - test
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
