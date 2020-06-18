@@ -22,7 +22,7 @@ provider "aws" {
 #
 # The handler is the name of the executable for go1.x runtime.
 resource "aws_lambda_function" "resume-api" {
-  filename = "${data.archive_file.placeholder.output_path}"
+  filename = data.archive_file.placeholder.output_path
   function_name = "resume-api"
   handler       = "resume-api"
   role          = aws_iam_role.resume-api.arn
