@@ -58,21 +58,3 @@ workflows:
           filters:
             branches:
               only: master
-
-workflows:
-  version: 2
-  cicd:
-    jobs:
-      - build-for-test:
-      - test:
-          requires:
-            - build-for-test
-      - build-for-production:
-          requires:
-            - test
-      - deploy:
-          requires:
-            - build-for-production
-          filters:
-            branches:
-              only: master
