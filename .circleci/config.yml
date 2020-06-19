@@ -21,6 +21,10 @@ jobs:
       - run: go get -v -t -d ./...
       - run: GOOS=linux go build -o resume-api main.go
       - run: zip resume-api.zip -q resume-api
+      - persist_to_workspace:
+          root: .
+          paths:
+            - zip resume-api.zip
 
   deploy:
     docker:
