@@ -60,7 +60,7 @@ jobs:
           command: |
             aws lambda update-function-code \
               --function-name=resume-api \
-              --zip-file=fileb://resume-api.zip 1> /dev/null \
+              --zip-file=fileb://build/resume-api.zip 1> /dev/null \
               --region=us-east-1
 
 workflows:
