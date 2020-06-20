@@ -30,7 +30,7 @@ jobs:
           command: GOOS=linux go build -o resume-api main.go
       - run:
           name: Zip executable
-          command: zip resume-api.zip -q resume-api
+          command: zip build/resume-api.zip -q resume-api
       - run:
           name: Check present working directory
           command: pwd
