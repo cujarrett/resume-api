@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.0.0] - 2020-06-06
+## [v1.0.0] - 2020-06-20
 ### Added
 - :tada: Ability to serve my resume in JSON format over REST API
 
