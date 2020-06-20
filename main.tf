@@ -6,7 +6,7 @@ variable "aws_region" {
 
 data "archive_file" "placeholder" {
   type = "zip"
-  output_path = "${path.module}/lambda_function_payload.zip"
+  output_path = "${path.module}/lambda-function-payload.zip"
 
   source {
     content = "placeholder"

@@ -26,9 +26,12 @@
 
 # Build
 resume-api
-resume-api.zip
+build
+
+# Terraform
 terraform.tfstate
 terraform.tfstate.backup
+lambda-function-payload.zip
 
 # misc
 .DS_Store
