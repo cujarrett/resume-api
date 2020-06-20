@@ -33,5 +33,5 @@ terraform.tfstate
 terraform.tfstate.backup
 lambda-function-payload.zip
 
-# misc
+# Miscellaneous
 .DS_Store
