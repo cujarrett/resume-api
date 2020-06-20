@@ -31,6 +31,12 @@ jobs:
       - run:
           name: Zip executable
           command: zip resume-api.zip -q resume-api
+      - run:
+          name: Check present working directory
+          command: pwd
+      - run:
+          name: Check files
+          command: ls -la
       - persist_to_workspace:
           root: .
           paths:
