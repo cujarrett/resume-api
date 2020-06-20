@@ -43,7 +43,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - zip ./resume-api.zip
+            - build/resume-api.zip
 
   deploy:
     docker:
