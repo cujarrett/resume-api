@@ -29,6 +29,9 @@ jobs:
           name: Build executable
           command: GOOS=linux go build -o resume-api main.go
       - run:
+          name: Make temp build folder
+          command: mkdir build
+      - run:
           name: Zip executable
           command: zip build/resume-api.zip -q resume-api
       - run:
