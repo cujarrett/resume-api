@@ -11,10 +11,10 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: go get -v -t -d ./...
+          command: make install
       - run:
           name: Run tests
-          command:  go test -v ./...
+          command:  make test
 
   build:
     docker:
@@ -24,22 +24,16 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: go get -v -t -d ./...
+          command: make install
       - run:
           name: Build executable
-          command: GOOS=linux go build -o resume-api main.go
+          command: make compile
       - run:
           name: Make temp build folder
           command: mkdir build
       - run:
           name: Zip executable
           command: zip build/resume-api.zip -q resume-api
-      - run:
-          name: Check present working directory
-          command: pwd
-      - run:
-          name: Check files
-          command: ls -la
       - persist_to_workspace:
           root: .
           paths:
