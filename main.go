@@ -333,19 +333,19 @@ func (input Resume) formatResume() string {
 	if error != nil {
 		log.Println("JSON parse error: ", error)
 	}
-	formattedJson := string(prettyJSON.Bytes())
-	return formattedJson
+	formattedResume := string(prettyJSON.Bytes())
+	return formattedResume
 }
 
 // The input type and the output type are defined by the API Gateway.
 func handleRequest(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	resume := getResume()
-	formattedJson := resume.formatResume()
+	formattedResume := resume.formatResume()
 
 	response := events.APIGatewayProxyResponse{
 		StatusCode: http.StatusOK,
 		Headers:    map[string]string{"Content-Type": "text/plain; charset=utf-8"},
-		Body:       formattedJson,
+		Body:       formattedResume,
 	}
 	return response, nil
 }
