@@ -25,7 +25,7 @@ You can view it via web browser:
 https://resume.mattjarrett.dev
 
 ## Why
-[To build something simple with Go to get more experience on with the language](https://github.com/cujarrett/personal-goals#things-ill-do-in-2020).
+[To build something simple with Go to get more experience with the language](https://github.com/cujarrett/personal-goals#things-ill-do-in-2020).
 To expose my resume as an API as [JSON-based standard for resumes](https://jsonresume.org/).
 
 ### Why Go?
