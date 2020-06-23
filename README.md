@@ -18,7 +18,7 @@ pipeline.
 ## How can I see or use it?
 You can hit the REST API via curl:
 ```sh
-curl https://1rbvpuo36l.execute-api.us-east-1.amazonaws.com/v1/resume-api
+curl -L https://resume.mattjarrett.dev
 ```
 You can view it via web browser:
 
