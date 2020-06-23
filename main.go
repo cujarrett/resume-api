@@ -322,7 +322,7 @@ func getResume() *Resume {
 	}
 }
 
-func formatResume(input *Resume) string {
+func (input Resume) formatResume() string {
 	bytesBuffer := new(bytes.Buffer)
 	json.NewEncoder(bytesBuffer).Encode(&input)
 
@@ -340,7 +340,7 @@ func formatResume(input *Resume) string {
 // The input type and the output type are defined by the API Gateway.
 func handleRequest(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	resume := getResume()
-	formattedJson := formatResume(resume)
+	formattedJson := resume.formatResume()
 
 	response := events.APIGatewayProxyResponse{
 		StatusCode: http.StatusOK,

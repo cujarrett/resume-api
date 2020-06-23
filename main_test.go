@@ -10,7 +10,7 @@ func TestGetResume(test *testing.T) {
 	data, _ := ioutil.ReadFile("./expected.json")
 	expected := string(data)
 	resume := getResume()
-	actual := formatResume(resume)
+	actual := resume.formatResume()
 	if expected != actual {
 		test.Errorf("The resume did not match expected result: got %v want %v", actual, expected)
 	}
