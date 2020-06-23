@@ -344,7 +344,7 @@ func handleRequest(request events.APIGatewayProxyRequest) (events.APIGatewayProx
 
 	response := events.APIGatewayProxyResponse{
 		StatusCode: http.StatusOK,
-		Headers:    map[string]string{"Content-Type": "text/plain; charset=utf-8"},
+		Headers:    map[string]string{"Content-Type": "application/json"},
 		Body:       formattedResume,
 	}
 	return response, nil
