@@ -32,3 +32,6 @@ To expose my resume as an API as [JSON-based standard for resumes](https://jsonr
 - It's compiled. So you get small binaries.
 - It's fast. (slower than c/c++ or rust) but faster than most other web programming languages.
 - [Fast growing](https://octoverse.github.com/#top-languages)
+
+## Full Write Up
+I wrote a short post on how I implemented this on [Dev.to](https://dev.to/cujarrett/how-i-built-a-resume-api-w-go-terraform-and-aws-371o).
