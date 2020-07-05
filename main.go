@@ -11,16 +11,16 @@ import (
 )
 
 type Resume struct {
-	Basics       Basics      `json:"basics"`
-	Work         []Work      `json:"work"`
-	Volunteer    []Volunteer `json:"volunteer"`
-	Education    []Education `json:"education"`
-	Awards       []string    `json:"awards"`
-	Publications []string    `json:"publications"`
-	Skills       []Skill     `json:"skills"`
-	Languages    []Language  `json:"languages"`
-	Interests    []Interest  `json:"interests"`
-	References   []Reference `json:"references"`
+	Basics       Basics        `json:"basics"`
+	Work         []Work        `json:"work"`
+	Volunteer    []Volunteer   `json:"volunteer"`
+	Education    []Education   `json:"education"`
+	Awards       []string      `json:"awards"`
+	Publications []Publication `json:"publications"`
+	Skills       []Skill       `json:"skills"`
+	Languages    []Language    `json:"languages"`
+	Interests    []Interest    `json:"interests"`
+	References   []Reference   `json:"references"`
 }
 
 type Basics struct {
@@ -77,6 +77,14 @@ type Education struct {
 	EndDate     string   `json:"endDate"`
 	Gpa         string   `json:"gpa"`
 	Courses     []string `json:"courses"`
+}
+
+type Publication struct {
+	Name        string `json:"name"`
+	Publisher   string `json:"publisher"`
+	ReleaseDate string `json:"releaseDate"`
+	Website     string `json:"website"`
+	Summary     string `json:summary`
 }
 
 type Skill struct {
@@ -171,8 +179,16 @@ func getResume() *Resume {
 				Courses:     []string{},
 			},
 		},
-		Awards:       []string{},
-		Publications: []string{},
+		Awards: []string{},
+		Publications: []Publication{
+			{
+				Name:        "How I Built a Resume API w/ Go, Terraform, and AWS",
+				Publisher:   "DEV",
+				ReleaseDate: "2020-06-27",
+				Website:     "https://dev.to/cujarrett/how-i-built-a-resume-api-w-go-terraform-and-aws-371o",
+				Summary:     "How I Built a Resume API w/ Go, Terraform, and AWS",
+			},
+		},
 		Skills: []Skill{
 			{
 				Name:  "AWS",
