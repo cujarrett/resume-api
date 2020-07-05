@@ -84,7 +84,7 @@ type Publication struct {
 	Publisher   string `json:"publisher"`
 	ReleaseDate string `json:"releaseDate"`
 	Website     string `json:"website"`
-	Summary     string `json:summary`
+	Summary     string `json:"summary"`
 }
 
 type Skill struct {
