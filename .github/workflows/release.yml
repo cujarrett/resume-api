@@ -1,0 +1,43 @@
+name: release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: release
+    environment: main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-go@v2
+      - run: make install
+      - run: make test
+  deploy:
+    name: deploy
+    needs: release
+    environment: main
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-go@v2
+      - run: make install
+      - run: make compile
+      - run: mkdir build
+      - run: zip build/resume-api.zip -q resume-api
+      - env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws lambda update-function-code \
+              --function-name=resume-api \
+              --zip-file=fileb://build/resume-api.zip 1> /dev/null \
+              --region=us-east-1
