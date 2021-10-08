@@ -1,28 +1,19 @@
-variable "aws_region" {
-  description = "AWS region for the infrastructure"
-  type = string
-  default = "us-east-1"
-}
-
 data "archive_file" "placeholder" {
-  type = "zip"
+  type        = "zip"
   output_path = "${path.module}/lambda-function-payload.zip"
 
   source {
-    content = "placeholder"
+    content  = "placeholder"
     filename = "placeholder.txt"
   }
 }
 
-provider "aws" {
-  region = var.aws_region
-}
 
 # Define a Lambda function.
 #
 # The handler is the name of the executable for go1.x runtime.
 resource "aws_lambda_function" "resume-api" {
-  filename = data.archive_file.placeholder.output_path
+  filename      = data.archive_file.placeholder.output_path
   function_name = "resume-api"
   handler       = "resume-api"
   role          = aws_iam_role.resume-api.arn
