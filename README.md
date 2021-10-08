@@ -3,7 +3,7 @@
 ![logo](./media/logo.png)
 
 <p align="center">
-  <a href="https://circleci.com/gh/cujarrett/resume-api/tree/master"><img alt="Circle CI" src="https://circleci.com/gh/cujarrett/resume-api/tree/master.svg?style=svg"></a>
+  <a href="https://github.com/cujarrett/resume-api/actions"><img alt="CI/CD" src="https://github.com/cujarrett/resume-api/actions/workflows/release.yml/badge.svg"></a>
 </p>
 
 ## What is it?
