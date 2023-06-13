@@ -2,7 +2,7 @@ clean:
 	go clean
 
 install:
-	go install -v -t -d ./...
+	go install
 
 test:
 	go test -v ./...
